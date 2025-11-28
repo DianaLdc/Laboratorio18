@@ -1,14 +1,10 @@
- async function obtenerUsuario10() {
-    try {
-        const respuesta = await fetch("https://jsonplaceholder.typicode.com/users/10");
-        const datos = await respuesta.json();
+fetch("https://jsonplaceholder.typicode.com/users")
+    .then(respuesta => respuesta.json())
+    .then(usuarios => {
+        console.log("Nombres de los usuarios:");
 
-        console.log("Usuario con ID 10 (async/await):");
-        console.log(datos);
-
-    } catch (error) {
-        console.error("Error:", error);
-    }
-}
-
-obtenerUsuario10();
+        usuarios.forEach(usuario => {
+            console.log(usuario.name);
+        });
+    })
+    .catch(error => console.error("Error:", error));
