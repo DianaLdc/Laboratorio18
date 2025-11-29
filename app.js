@@ -1,7 +1,4 @@
-const regexURL = /https:\/\/[^\s]+/g;
+const texto = "<h1>Hola</h1>";
+const limpio = texto.replace(/<\/?[^>]+>/g, "");
 
-const texto = "Visita https://unsa.edu.pe o http://google.com o https://github.com";
-
-const urlsSeguras = texto.match(regexURL);
-
-console.log(urlsSeguras);
+console.log(limpio); // Hola
