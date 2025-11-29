@@ -1,5 +1,5 @@
-const texto = "Hola. Cómo estás? Bien!";
+const regexFecha = /^\d{2}\/\d{2}\/\d{4}$/;
 
-const oraciones = texto.split(/[.!?]+/);
-
-console.log(oraciones); 
+console.log(regexFecha.test("12/05/2024"));  
+console.log(regexFecha.test("5/5/2024"));   
+console.log(regexFecha.test("12-05-2024")); 
