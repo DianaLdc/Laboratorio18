@@ -1,4 +1,5 @@
-const texto = "<h1>Hola</h1>";
-const limpio = texto.replace(/<\/?[^>]+>/g, "");
+const texto = "Hola. Cómo estás? Bien!";
 
-console.log(limpio); // Hola
+const oraciones = texto.split(/[.!?]+/);
+
+console.log(oraciones); 
