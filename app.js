@@ -1,19 +1,15 @@
-document.getElementById("btnCargar").addEventListener("click", cargarUsuario);
+import multiplicar from "./multiplicacionDivision.js";
+import { dividir } from "./multiplicacionDivision.js";
+import { sumar, restar } from "./sumaResta.js";
 
-async function cargarUsuario() {
-    try {
-        const respuesta = await fetch("https://jsonplaceholder.typicode.com/users/2");
-        const usuario = await respuesta.json();
+console.log("Resultados de las operaciones:");
 
-        const resultado = document.getElementById("resultado");
+console.log("Suma:", sumar(10, 5));
+console.log("Resta:", restar(10, 5));
+console.log("Multiplicación:", multiplicar(10, 5));
 
-        resultado.innerHTML = `
-            <strong>Nombre:</strong> ${usuario.name} <br>
-            <strong>Email:</strong> ${usuario.email} <br>
-            <strong>Ciudad:</strong> ${usuario.address.city}
-        `;
-
-    } catch (error) {
-        console.error("Error:", error);
-    }
+try {
+    console.log("División:", dividir(10, 0));  
+} catch (error) {
+    console.error("Error en división:", error.message);
 }
