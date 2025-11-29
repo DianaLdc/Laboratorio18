@@ -1,15 +1,7 @@
-import multiplicar from "./multiplicacionDivision.js";
-import { dividir } from "./multiplicacionDivision.js";
-import { sumar, restar } from "./sumaResta.js";
+const regexURL = /https:\/\/[^\s]+/g;
 
-console.log("Resultados de las operaciones:");
+const texto = "Visita https://unsa.edu.pe o http://google.com o https://github.com";
 
-console.log("Suma:", sumar(10, 5));
-console.log("Resta:", restar(10, 5));
-console.log("Multiplicación:", multiplicar(10, 5));
+const urlsSeguras = texto.match(regexURL);
 
-try {
-    console.log("División:", dividir(10, 0));  
-} catch (error) {
-    console.error("Error en división:", error.message);
-}
+console.log(urlsSeguras);
